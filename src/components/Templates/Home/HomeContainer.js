@@ -4,7 +4,6 @@ import api from '../../../helpers/api';
 
 class HomeContainer extends Component {
     handleClick = async () =>{
-        console.log("allo");
         const data = await api.getBoxOffice();
         console.log(data);
     }
