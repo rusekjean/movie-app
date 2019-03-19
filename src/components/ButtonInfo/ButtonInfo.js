@@ -1,8 +1,12 @@
 import React from 'react';
+import styled from '@emotion/styled'
 
+const Button = styled.button`
+  color: hotpink;
+`
 const ButtonInfo = ({}) => (
   <div className="button-info">
-    <button>More Info</button>
+    <Button>More Info</Button>
   </div>
 );
 
