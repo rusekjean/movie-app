@@ -8,8 +8,10 @@ var white = "#FFFFFF";
 var black = "#2D2D2D";
 var red = "#C03A2B";
 
-const TextLink = styled.h3`
+const TextLink = styled.h2`
     text-decoration:none;
+    font-family: NetflixRegular;
+    font-size: 2em;
     color: ${black};
     :hover {
       color: ${red};

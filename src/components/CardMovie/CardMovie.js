@@ -1,12 +1,12 @@
 import React from 'react';
 import ButtonInfo from '../ButtonInfo/ButtonInfoContainer';
 
-const CardMovie = ({}) => (
+const CardMovie = ({title, rating, genre}) => (
   <div className="card-movie">
-    <h2>Boulevard de la mort</h2>
+    <h2>{title}</h2>
     <ButtonInfo/>
-    <h3>7.7/10</h3>
-    <h4>Genre</h4>
+    <h3>{rating}</h3>
+    <h4>{genre}</h4>
   </div>
 );
 
