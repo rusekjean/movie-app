@@ -40,7 +40,7 @@ or Yarn:
 
 ```bash
 yarn install
-yarn start
+yarn
 ```
 
 ## Storybook App
