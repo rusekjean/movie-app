@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import CardMovie from './CardMovie';
-import api from '../../helpers/api';
-
 
 class CardMovieContainer extends Component {
     constructor(props) {

@@ -1,19 +1,26 @@
 import React from 'react';
-import ButtonInfo from '../../ButtonInfo/ButtonInfoContainer';
 import CardMovie from '../../CardMovie/CardMovieContainer';
-import CardSquare from '../../CardSquare/CardSquareContainer';
-import List from '../../List/ListContainer';
 import Nav from '../../Nav/NavContainer';
+import styled from '@emotion/styled'
 
+var white = "#FFFFFF";
+var black = "#2D2D2D";
+var red = "#C03A2B";
 
+const TextBoxOffice = styled.h2`
+  color: ${red};
+  font-family: NetflixBold;
+  font-size: 64px;
+`
 const Home = ({handleClick, data}) => (
   <div className="home">
     <Nav/>
-    <h2>Box-Office</h2>
+    
     <div className="row">
+      <TextBoxOffice className="col-md-12 center-md">Box-Office</TextBoxOffice>
       {data.length > 0 && (
         data.map(movie => (
-          <div className="col-md-4">
+          <div className="col-md-4 center-md">
             <CardMovie
               data={movie}
               id={movie.imdbID}
@@ -26,7 +33,6 @@ const Home = ({handleClick, data}) => (
         ))
       )}
     </div>
-    <button onClick={handleClick}>test</button>
     
   </div>
 );

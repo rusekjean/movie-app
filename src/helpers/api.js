@@ -36,7 +36,20 @@ class api {
         const json = await response.json();
         return json;
         }
+
+    async getMovieByTitle(title) {
+        var omdburl = OMDB_API_URI;
+        omdburl += "?t=";
+        omdburl += title;
+        omdburl += "&apikey=";
+        omdburl += OMDB_API_KEY;
+
+        const response = await fetch(omdburl);
+        const json = await response.json();
+        return json;
+        }
     };
+    
 
  
 

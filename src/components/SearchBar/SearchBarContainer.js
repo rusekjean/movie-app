@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
+import api from '../../helpers/api';
+import {
+	withRouter
+} from 'react-router-dom';
 
 class SearchBarContainer extends Component {
     constructor(props) {
@@ -9,8 +13,10 @@ class SearchBarContainer extends Component {
         };
     }
     
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
+        const data = await api.getMovieByTitle(this.state.value);
+        this.props.history.push(`/info/${data.imdbID}`)
         console.log(this.state.value);
     }
     handleChange = (e)  => {
@@ -28,4 +34,4 @@ class SearchBarContainer extends Component {
     }
 }
 
-export default SearchBarContainer;
+export default withRouter(SearchBarContainer);
