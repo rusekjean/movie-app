@@ -1,12 +1,31 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
+var white = "#FFFFFF";
+var black = "#2D2D2D";
+var red = "#C03A2B";
+
 const Button = styled.button`
-  color: hotpink;
+  color: ${black};
+  border-radius: 34px;
+  padding: 15px 50px;
+  border: 2px solid ${black};
+  background: ${white}; 
+  :hover {
+    color: ${red};
+    border: 2px solid ${red};
+  }
+`
+const TextButton = styled.span`
+  font-family: NetflixBold;
+  font-size: 24px;
+
 `
 const ButtonInfo = ({}) => (
   <div className="button-info">
-    <Button>More Info</Button>
+    <Button>
+      <TextButton>More Info</TextButton>
+    </Button>
   </div>
 );
 
