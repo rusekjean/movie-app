@@ -9,7 +9,10 @@ const Router = () => (
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/info/:id" component={Info} />
-      {/* <Route path="/recipe/:id" component={Recipe} /> */}
+      <Route path='/storybook' component={() => { 
+        window.location = 'http://localhost:9009'; 
+        return null;
+      }}/>
     </Switch>
   </BrowserRouter>
 );

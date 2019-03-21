@@ -12,15 +12,23 @@ const TextLink = styled.h2`
     text-decoration:none;
     font-family: NetflixRegular;
     font-size: 2em;
-    color: ${black};
+    color: ${white};
     :hover {
       color: ${red};
+    }
+`
+
+const NavContainer = styled.div`
+    padding: 0px 20px 0px 20px;
+    background-color: ${black};
+    :hover {
+      color: ${white};
     }
 
 `
 
 const Nav = ({handleClick}) => (
-  <div className="nav">
+  <NavContainer className="nav">
     <div className="row middle-md">
       <div className="col-md-1 middle-md">
         <Link style={{ textDecoration: 'none'}} to="/">
@@ -41,7 +49,7 @@ const Nav = ({handleClick}) => (
         </Link>
       </div>
     </div>
-  </div>
+  </NavContainer>
 );
 
 export default Nav;

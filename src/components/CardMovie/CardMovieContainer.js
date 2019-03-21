@@ -10,11 +10,13 @@ class CardMovieContainer extends Component {
     }
     
     render(props) {
+        console.log(this.state.data)
         return (
             <CardMovie
                 data={this.props.data}
                 id={this.props.id}
                 key={this.props.id}
+                poster={this.props.poster}
                 title={this.props.title}
                 rating={this.props.rating}
                 genre={this.props.genre}

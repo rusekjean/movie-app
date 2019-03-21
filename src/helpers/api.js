@@ -2,7 +2,9 @@ const TRAKT_API_KEY = "Your Trakt api key";
 const OMDB_API_KEY = "Your OMDB api key";
 
 const OMDB_API_URI = "http://www.omdbapi.com/"; // ex : http://www.omdbapi.com/?i=tt3896198&apikey=a3544
-const TRAKT_API_BOXOFFICE = "https://api.trakt.tv/movies/boxoffice"; 
+const TRAKT_API_BOXOFFICE = "https://api.trakt.tv/movies/boxoffice";
+const TRAKT_API_POPULAR = "https://api.trakt.tv/movies/popular";
+
 
 /*
 SET HEADERS FOR TRAKT API
@@ -48,10 +50,20 @@ class api {
         const json = await response.json();
         return json;
         }
+    async getPopular() {
+        const options = {
+            method: 'get',
+            headers: {
+                'Content-type': 'application/json',
+                'trakt-api-version':'2',
+                'trakt-api-key': TRAKT_API_KEY
+            }
+        }
+        const response = await fetch(TRAKT_API_POPULAR, options);
+        const json = await response.json();
+        return json;
     };
-    
-
- 
+}
 
 export default new api();
   

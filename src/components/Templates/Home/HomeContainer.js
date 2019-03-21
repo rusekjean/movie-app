@@ -6,18 +6,34 @@ class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            dataBoxOffice: [],
+            dataPopular: []
         };
     }
 
     async componentDidMount() {
-        const dataTrakt = await api.getBoxOffice();
-        const dataM = [];
-        for (let i = 0; i < 3; i++) {
-            let dataOmdb = await api.getMovieById(dataTrakt[i].movie.ids.imdb);
-            dataM.push(dataOmdb);
+        let dataTrakt01 = await api.getBoxOffice();
+        let dataB = [];
+        for (let i = 0; i < 6; i++) {
+            let dataOmdb = await api.getMovieById(dataTrakt01[i].movie.ids.imdb);
+            dataB.push(dataOmdb);
         }
-        this.setState({data: dataM})
+        console.log('first call');
+        this.setState({dataBoxOffice: dataB})
+        console.log('first call');
+        //console.log(dataM);
+        //console.log(dataOmdb);
+        //console.log(dataTrakt[0]);
+        //console.log(dataTrakt[0].movie.ids.imdb);
+
+        let dataTrakt02 = await api.getPopular();
+        let dataP = [];
+        for (let i = 0; i < 10; i++) {
+            let dataOmdb = await api.getMovieById(dataTrakt02[i].ids.imdb);
+            dataP.push(dataOmdb);
+        }
+        console.log('second call');
+        this.setState({dataPopular: dataP})
         //console.log(dataM);
         //console.log(dataOmdb);
         //console.log(dataTrakt[0]);
@@ -25,26 +41,23 @@ class HomeContainer extends Component {
     }
 
     handleClick = async () =>{
-        const dataTrakt = await api.getBoxOffice();
-        const dataM = [];
+        const dataTrakt = await api.getPopular();
+        let dataM = [];
         for (let i = 0; i < 3; i++) {
-            let dataOmdb = await api.getMovieById(dataTrakt[i].movie.ids.imdb);
+            let dataOmdb = await api.getMovieById(dataTrakt[i].ids.imdb);
             dataM.push(dataOmdb);
         }
-        this.setState({data: dataM})
-        //console.log(dataM);
-        //console.log(dataOmdb);
-        //console.log(dataTrakt[0]);
-        //console.log(dataTrakt[0].movie.ids.imdb);
-
     }
 
     render() {
-        console.log(this.state.data);
+        console.log(this.state.dataPopular);
+    
         return (
             <Home
+                key="1"
                 handleClick={this.handleClick}
-                data={this.state.data}
+                dataBoxOffice={this.state.dataBoxOffice}
+                dataPopular={this.state.dataPopular}
             />
         );
     }
