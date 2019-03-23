@@ -57,13 +57,11 @@ const TextSpan = styled.h3`
 const ButtonLike = styled.button`
   background:${white};
   border: none;
-  color:${red};
   cursor:pointer;
 `
 const ButtonWatched = styled.button`
   background:${white};
   border: none;
-  color:${blue};
   cursor:pointer;
 `
 const IconLike = styled.i`
@@ -74,7 +72,7 @@ const IconWatched = styled.i`
 `
 
 
-const CardMovie = ({id, title, rating, genre, poster}) => (
+const CardMovie = ({id, title, rating, genre, poster, handleClickLike, colorLike, handleClickWatched, colorWatched}) => (
   <CardContainer className="card-movie">
     <FlipCardInner className="row">
       <FlipCardFront className="col-md-12">
@@ -82,10 +80,10 @@ const CardMovie = ({id, title, rating, genre, poster}) => (
       </FlipCardFront>
       <FlipCardBack className="col-md-12"> 
         <div className="row">
-          <ButtonLike className="col-md-offset-3 col-md-2">
+          <ButtonLike onClick={handleClickLike} className="col-md-offset-3 col-md-2" style={{color:colorLike}}>
             <IconLike className="fas fa-heart"/>
           </ButtonLike>
-          <ButtonWatched className="col-md-offset-2 col-md-2">
+          <ButtonWatched onClick={handleClickWatched} className="col-md-offset-2 col-md-2" style={{color:colorWatched}}>
             <IconWatched className="fas fa-eye"/>
           </ButtonWatched>
           <h2 className="col-md-12">{title}</h2>

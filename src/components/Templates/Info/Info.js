@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../../Nav/NavContainer';
 
 
-const Info = ({handleClick, data}) => (
+const Info = ({data}) => (
   <div className="home">
     <Nav/>
     <h2>{data.Title}</h2>

@@ -18,9 +18,7 @@ class HomeContainer extends Component {
             let dataOmdb = await api.getMovieById(dataTrakt01[i].movie.ids.imdb);
             dataB.push(dataOmdb);
         }
-        console.log('first call');
         this.setState({dataBoxOffice: dataB})
-        console.log('first call');
         //console.log(dataM);
         //console.log(dataOmdb);
         //console.log(dataTrakt[0]);
@@ -32,7 +30,6 @@ class HomeContainer extends Component {
             let dataOmdb = await api.getMovieById(dataTrakt02[i].ids.imdb);
             dataP.push(dataOmdb);
         }
-        console.log('second call');
         this.setState({dataPopular: dataP})
         //console.log(dataM);
         //console.log(dataOmdb);

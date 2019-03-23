@@ -28,7 +28,7 @@ const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
         dataBoxOffice.map(movie => (
           <div className="col-md-4 center-md">
             <CardMovie
-              dataBoxOffice={movie}
+              data={movie}
               id={movie.imdbID}
               key={movie.imdbID}
               poster={movie.Poster}
@@ -48,7 +48,7 @@ const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
           dataPopular.map(movie => (
             <div className="col-md-3 center-md">
               <CardMovie
-                dataPopular={movie}
+                data={movie}
                 id={movie.imdbID}
                 key={movie.imdbID}
                 poster={movie.Poster}

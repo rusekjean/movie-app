@@ -6,36 +6,37 @@ class InfoContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            id: ""
         };
     }
 
     async componentDidMount() {
         const data = await api.getMovieById(this.props.match.params.id);
-        this.setState({data: data})
+        this.setState({
+            data: data,
+            id: this.props.match.params.id
+        })
         console.log(data);
         //console.log(dataOmdb);
         //console.log(dataTrakt[0]);
         //console.log(dataTrakt[0].movie.ids.imdb);
     }
- 
-    handleClick = async () =>{
-        const dataTrakt = await api.getBoxOffice();
-        const dataM = [];
-        for (let i = 0; i < 3; i++) {
-            let dataOmdb = await api.getMovieById(dataTrakt[i].movie.ids.imdb);
-            dataM.push(dataOmdb);
+    async componentDidUpdate() {
+        if(this.props.match.params.id !== this.state.id){
+            const data = await api.getMovieById(this.props.match.params.id);
+            this.setState({
+                data: data,
+                id: this.props.match.params.id
+            });
         }
-        this.setState({data: dataM})
-        //console.log(dataM);
+        
         //console.log(dataOmdb);
         //console.log(dataTrakt[0]);
         //console.log(dataTrakt[0].movie.ids.imdb);
-
     }
 
     render() {
-        console.log(this.state.data);
         return (
             <Info
                 handleClick={this.handleClick}
