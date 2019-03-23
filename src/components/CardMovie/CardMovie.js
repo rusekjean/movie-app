@@ -2,51 +2,104 @@ import React from 'react';
 import ButtonInfo from '../ButtonInfo/ButtonInfoContainer';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled'
-import { css, jsx } from '@emotion/core'
 
 var white = "#FFFFFF";
 var black = "#2D2D2D";
 var red = "#C03A2B";
-
-const anotherStyle = css({
-  backgroundImage: `url(${poster})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  boxShadow: '0 1px 4px rgba(192, 58, 43, 1)',
-  minHeight: '550px',
-  margin: '30px 60px',
-  '&:hover': {
-    backgroundImage: 'none',
-    background: 'rgba(76, 175, 80, 0.8)'
-  }
-})
+var blue = '#014CB7';
 
 const CardContainer = styled.div`
+  min-height: 500px;
+  max-width: 400px;
+  margin: 30px auto;
+`
 
-  :hover{
-    background-image:none;
-    
+const FlipCardInner = styled.div`
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  :hover {
+    transform: rotateY(180deg);
   }
 `
-const TextSpan = styled.span`
-  margin: 0px 0px;
+const FlipCardFront = styled.div`
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;  
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+`
+const FlipCardBack = styled.div`
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 10px;
+  left: 0;
+  right: 0; 
+  top: 75px;
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  translate3d(0,0,0);
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 `
 
+const Image = styled.img`
+  width: auto;
+`
+const TextSpan = styled.h3`
+`
+const ButtonLike = styled.button`
+  background:${white};
+  border: none;
+  color:${red};
+  cursor:pointer;
+`
+const ButtonWatched = styled.button`
+  background:${white};
+  border: none;
+  color:${blue};
+  cursor:pointer;
+`
+const IconLike = styled.i`
+  font-size:34px;
+`
+const IconWatched = styled.i`
+  font-size:34px;
+`
+
+
 const CardMovie = ({id, title, rating, genre, poster}) => (
-  <CardContainer
-  css={anotherStyle}
-    className="card-movie row middle-md"
-  >
-    <h2 className="col-md-12">{title}</h2>
-    <div className="col-md-12">
-      <Link to={`/info/${id}`} key={id}>
+  <CardContainer className="card-movie">
+    <FlipCardInner className="row">
+      <FlipCardFront className="col-md-12">
+        <Image src={poster} alt="poster"/>
+      </FlipCardFront>
+      <FlipCardBack className="col-md-12"> 
+        <div className="row">
+          <ButtonLike className="col-md-offset-3 col-md-2">
+            <IconLike className="fas fa-heart"/>
+          </ButtonLike>
+          <ButtonWatched className="col-md-offset-2 col-md-2">
+            <IconWatched className="fas fa-eye"/>
+          </ButtonWatched>
+          <h2 className="col-md-12">{title}</h2>
+          <Link className="col-md-12" to={`/info/${id}`} key={id}>
             <ButtonInfo/>
-      </Link>
-      <TextSpan>{rating}</TextSpan>
-      <br/>
-      <TextSpan>{genre}</TextSpan>
-    </div>
+          </Link>
+          <div className="col-md-12">
+            <TextSpan>{rating}</TextSpan>
+            <TextSpan>{genre}</TextSpan>
+          </div>
+        </div>
+      </FlipCardBack>
+      
+    </FlipCardInner>
   </CardContainer>
 );
 

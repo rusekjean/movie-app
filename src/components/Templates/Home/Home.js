@@ -12,8 +12,12 @@ const TextTitle = styled.h2`
   font-family: NetflixBold;
   font-size: 64px;
 `
+const HomeContainer = styled.div`
+  background-color:${white};
+`
+
 const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
-  <div className="home">
+  <HomeContainer className="home">
     <Nav/>
     
     <div className="row">
@@ -35,12 +39,11 @@ const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
           </div>
         ))
       )}
-    </div>
-
+      </div>
+    <div className="row">
     <TextTitle className="col-md-12 center-md" key="2">
         Popular
     </TextTitle>
-    <div className="row">
       {dataPopular.length > 0 && (
           dataPopular.map(movie => (
             <div className="col-md-3 center-md">
@@ -59,7 +62,7 @@ const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
     </div>
     
     
-  </div>
+  </HomeContainer>
 );
 
 export default Home;

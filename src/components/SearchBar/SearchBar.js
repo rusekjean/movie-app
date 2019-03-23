@@ -26,7 +26,7 @@ const ButtonSearch = styled.button`
   position: relative;
   left: -56px;
   top: 1px;
-  height: 40px;
+  height: 35px;
   border: none;
   background: ${white};
   text-align: center;
@@ -39,7 +39,7 @@ const ButtonSearch = styled.button`
   }
 `
 const IconSearch = styled.i`
-  
+
 `
 
 const SearchBar = ({handleSubmit, handleChange, value}) => (
