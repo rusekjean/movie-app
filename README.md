@@ -39,8 +39,8 @@ npm start
 or Yarn:
 
 ```bash
-yarn install
 yarn
+yarn start
 ```
 
 ## Storybook App
