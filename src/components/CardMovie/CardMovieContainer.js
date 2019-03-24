@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardMovie from './CardMovie';
+import localstorage from '../../helpers/localstorage';
 
 class CardMovieContainer extends Component {
     constructor(props) {
@@ -15,12 +16,16 @@ class CardMovieContainer extends Component {
     handleClickLike = (e) => {
         e.preventDefault();
         if(!this.state.like){
+            localstorage.addToLocalStorage('likeList',this.props.data);
+            console.log('LIKE LIST :',localstorage.getLikeList());
             this.setState({
                 colorLike: "#C03A2B",
                 like: true
             });
         }
         else {
+            localstorage.deleteFromLocalStorage('likeList',this.props.data);
+            console.log('LIKE LIST :',localstorage.getLikeList());
             this.setState({
                 colorLike: "grey",
                 like: false
@@ -31,12 +36,16 @@ class CardMovieContainer extends Component {
     handleClickWatched = (e) => {
         e.preventDefault();
         if(!this.state.watched){
+            localstorage.addToLocalStorage('watchedList',this.props.data);
+            console.log('WATCHED LIST :',localstorage.getWatchedList());
             this.setState({
                 colorWatched: "#014CB7",
                 watched: true
             });
         }
         else {
+            localstorage.deleteFromLocalStorage('watchedList',this.props.data);
+            console.log('WATCHED LIST :',localstorage.getWatchedList());
             this.setState({
                 colorWatched: "grey",
                 watched: false
@@ -51,7 +60,6 @@ class CardMovieContainer extends Component {
     //   }
 
     render(props) {
-        console.log('hello : ',this.props.data);
         return (
             <CardMovie
                 data={this.props.data}

@@ -18,8 +18,7 @@ const HomeContainer = styled.div`
 
 const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
   <HomeContainer className="home">
-    <Nav/>
-    
+    <Nav/> 
     <div className="row">
       <TextTitle className="col-md-12 center-md" key="1">
         Box-Office

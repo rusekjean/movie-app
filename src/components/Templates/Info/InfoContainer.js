@@ -17,10 +17,7 @@ class InfoContainer extends Component {
             data: data,
             id: this.props.match.params.id
         })
-        console.log(data);
-        //console.log(dataOmdb);
-        //console.log(dataTrakt[0]);
-        //console.log(dataTrakt[0].movie.ids.imdb);
+        //console.log(data);
     }
     async componentDidUpdate() {
         if(this.props.match.params.id !== this.state.id){
@@ -30,10 +27,6 @@ class InfoContainer extends Component {
                 id: this.props.match.params.id
             });
         }
-        
-        //console.log(dataOmdb);
-        //console.log(dataTrakt[0]);
-        //console.log(dataTrakt[0].movie.ids.imdb);
     }
 
     render() {
