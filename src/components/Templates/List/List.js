@@ -11,7 +11,7 @@ const List = ({dataLike, dataWatched}) => (
       </h2>
       {dataLike.length > 0 && (
         dataLike.map(movie => (
-          <div className="col-md-2 center-md">
+          <div className="col-md-3 center-md">
             <CardMovie
               data={movie}
               id={movie.imdbID}
@@ -31,7 +31,7 @@ const List = ({dataLike, dataWatched}) => (
     </h2>
       {dataWatched.length > 0 && (
         dataWatched.map(movie => (
-          <div className="col-md-2 center-md">
+          <div className="col-md-3 center-md">
             <CardMovie
               data={movie}
               id={movie.imdbID}
