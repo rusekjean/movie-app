@@ -8,7 +8,7 @@ var black = "#2D2D2D";
 var red = "#C03A2B";
 
 const TextTitle = styled.h2`
-  color: ${red};
+  color: ${Blue};
   font-family: NetflixBold;
   font-size: 64px;
 `
