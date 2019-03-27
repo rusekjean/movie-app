@@ -8,6 +8,7 @@ var black = "#3B393C";
 var red = "#C03A2B";
 var blue ="#3B3D9A";
 var violet = "#9235F3";
+var gris = "#DCDCDC";
 
 
 const TextTitle = styled.h2`
@@ -16,7 +17,7 @@ const TextTitle = styled.h2`
   font-size: 64px;
 `
 const HomeContainer = styled.div`
-  background-color:${white};
+  background-color:${gris};
 `
 
 const Home = ({handleClick, dataPopular, dataBoxOffice}) => (
