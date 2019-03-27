@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 var white = "#FFFFFF";
 var black = "#2D2D2D";
 var red = "#C03A2B";
+var blue ="#3B3D9A";
+var violet = "#9235F3";
 
 const InputText = styled.input`
   border: none;
@@ -16,10 +18,10 @@ const InputText = styled.input`
   border-radius: 34px;
   outline: none;
   :hover {
-    border-color: ${red};
+    border-color: ${violet};
   }
   :focus {
-    border-color:${red};
+    border-color:${violet};
   }
 `
 const ButtonSearch = styled.button`
@@ -35,7 +37,7 @@ const ButtonSearch = styled.button`
   cursor: pointer;
   font-size: 20px;
   :hover {
-    color: ${red};
+    color: ${blue};
   }
 `
 const IconSearch = styled.i`
@@ -49,7 +51,7 @@ const SearchBar = ({handleSubmit, handleChange, value}) => (
     type="text" 
     value={value} 
     onChange={handleChange} 
-    placeholder="Search Movie, Serie, Doc..."
+    placeholder="Search Movie,Doc..."
     />
     <ButtonSearch type="submit">
       <IconSearch className="fa fa-search"/>

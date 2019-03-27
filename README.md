@@ -25,7 +25,7 @@ How to specify the API Keys? Go to the website of those services and ask for one
 These instructions can be followed to run Movie App from a Bash terminal:
 
 ``` bash
-git clone https://gitlab.com/Agillmann/react-movie-app.git
+git clone https://gitlab.eemi.tech/valentin.rouviere/react-movie-app
 cd movie-app
 ```
 
@@ -53,4 +53,9 @@ And then you can access the Web App by opening http://localhost:3000 on your web
 
 # Author
 
-Adrien Gillmann - Maintainer - [Gitlab](https://gitlab.com/Agillmann/)
+Valentin Rouviere - [Gitlab](https://gitlab.eemi.tech/valentin.rouviere/)
+
+
+#Credit
+
+Adrien Gillmann - [Gitlab](https://gitlab.com/Agillmann/)

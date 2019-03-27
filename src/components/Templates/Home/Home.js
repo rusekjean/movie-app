@@ -4,11 +4,14 @@ import Nav from '../../Nav/NavContainer';
 import styled from '@emotion/styled'
 
 var white = "#FFFFFF";
-var black = "#2D2D2D";
+var black = "#3B393C";
 var red = "#C03A2B";
+var blue ="#3B3D9A";
+var violet = "#9235F3";
+
 
 const TextTitle = styled.h2`
-  color: ${Blue};
+  color: ${violet};
   font-family: NetflixBold;
   font-size: 64px;
 `
