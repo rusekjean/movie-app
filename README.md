@@ -56,6 +56,6 @@ And then you can access the Web App by opening http://localhost:3000 on your web
 Valentin Rouviere - [Gitlab](https://gitlab.eemi.tech/valentin.rouviere/)
 
 
-#Credit
+# Credit
 
 Adrien Gillmann - [Gitlab](https://gitlab.com/Agillmann/)
