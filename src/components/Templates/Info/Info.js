@@ -3,11 +3,11 @@ import Nav from '../../Nav/NavContainer';
 import styled from '@emotion/styled'
 
 var black = "#2D2D2D";
-var violet = "#9235F3";
+var green = "#1dd1a1";
 var blue = "#3B3D9A";
 
 const TextTitle = styled.h2`
-  color: ${violet};
+  color: ${green};
   font-family: NetflixBold;
   font-size: 45px;
   text-align : center;
@@ -19,16 +19,25 @@ align-content: flex-start;
 
 `
 const TitleH3 = styled.h3`
-color: ${violet};
+color: ${green};
 
 `
 const Resume = styled.article`
 padding: 1rem;
 `
+
+const Back = styled.a`
+padding: 5px 5px 0px 0px;
+font-size: 2rem;
+color : ${green};
+a {text-decoration:none};
+a {color: green};
+`
 const Info = ({data}) => (
   <div className="home">
     <Nav/>
     <TextTitle>{data.Title}</TextTitle>
+    <Back><div><a href="javascript:history.go(-1)">Retour</a></div></Back>
     
     <Section>
     <img src={data.Poster}/>
@@ -63,6 +72,7 @@ const Info = ({data}) => (
     </Resume>
     </Section>
   </div>
+
 );
 
 export default Info;

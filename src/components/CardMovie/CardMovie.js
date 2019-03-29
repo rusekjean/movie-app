@@ -8,6 +8,7 @@ var black = "#2D2D2D";
 var red = "#C03A2B";
 var blue = '#014CB7';
 var violet = "#9235F3";
+var green ="#1dd1a1";
 
 const CardContainer = styled.div`
   min-height: 500px;
@@ -55,16 +56,7 @@ const Image = styled.img`
 `
 const TextSpan = styled.h3`
 `
-const ButtonLike = styled.button`
-  background:${white};
-  border: none;
-  cursor:pointer;
-`
-const ButtonWatched = styled.button`
-  background:${white};
-  border: none;
-  cursor:pointer;
-`
+
 const IconLike = styled.i`
   font-size:34px;
 `
@@ -81,12 +73,7 @@ const CardMovie = ({id, title, rating, genre, poster, handleClickLike, colorLike
       </FlipCardFront>
       <FlipCardBack className="col-md-12"> 
         <div className="row">
-          <ButtonLike onClick={handleClickLike} className="col-md-offset-3 col-md-2" style={{color:colorLike}}>
-            <IconLike className="fas fa-heart"/>
-          </ButtonLike>
-          <ButtonWatched onClick={handleClickWatched} className="col-md-offset-2 col-md-2" style={{color:colorWatched}}>
-            <IconWatched className="fas fa-eye"/>
-          </ButtonWatched>
+
           <h2 className="col-md-12">{title}</h2>
           <Link className="col-md-12" to={`/info/${id}`} key={id}>
             <ButtonInfo/>

@@ -8,11 +8,12 @@ var black = "#3B393C";
 var red = "#C03A2B";
 var blue ="#3B3D9A";
 var violet = "#9235F3";
-var gris = "#DCDCDC";
+var gris = "#8395a7";
+var green ="#1dd1a1";
 
 
 const TextTitle = styled.h2`
-  color: ${violet};
+  color: ${green};
   font-family: NetflixBold;
   font-size: 64px;
 `

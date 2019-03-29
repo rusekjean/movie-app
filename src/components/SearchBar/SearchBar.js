@@ -6,6 +6,7 @@ var black = "#2D2D2D";
 var red = "#C03A2B";
 var blue ="#3B3D9A";
 var violet = "#9235F3";
+var green ="#1dd1a1";
 
 const InputText = styled.input`
   border: none;
@@ -18,10 +19,10 @@ const InputText = styled.input`
   border-radius: 34px;
   outline: none;
   :hover {
-    border-color: ${violet};
+    border-color: ${green};
   }
   :focus {
-    border-color:${violet};
+    border-color:${green};
   }
 `
 const ButtonSearch = styled.button`
